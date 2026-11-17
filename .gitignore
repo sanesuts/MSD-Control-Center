@@ -1,0 +1,28 @@
+# .NET : fichiers générés
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+*.user
+*.suo
+
+# IDE
+.vs/
+.idea/
+*.code-workspace
+
+# Fichiers temporaires
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Configuration et secrets locaux
+.env
+.env.*
+!.env.example
+secrets.json
+
+# Captures et données de rétro-ingénierie locales
+captures/
+*.pcap
+*.pcapng
