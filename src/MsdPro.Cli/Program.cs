@@ -1,3 +1,4 @@
+
 using MsdPro.Core;
 using MsdPro.Usb;
 
@@ -29,9 +30,25 @@ else
         Console.WriteLine($"Produit   : {usbDevice.ProductName}");
         Console.WriteLine($"VID       : 0x{usbDevice.VendorId:X4}");
         Console.WriteLine($"PID       : 0x{usbDevice.ProductId:X4}");
-        Console.WriteLine($"Input     : {usbDevice.InputReportLength} octets");
-        Console.WriteLine($"Output    : {usbDevice.OutputReportLength} octets");
-        Console.WriteLine($"Chemin    : {usbDevice.DevicePath}");
+        Console.WriteLine();
+
+        Console.WriteLine("Tentative d'ouverture de l'interface HID...");
+
+        if (!MsdProUsbConnection.TryOpen(usbDevice, out var connection)
+            || connection is null)
+        {
+            Console.WriteLine("Échec de l'ouverture de la connexion.");
+            continue;
+        }
+
+        using (connection)
+        {
+            Console.WriteLine($"Connexion ouverte : {connection.IsOpen}");
+            Console.WriteLine("Aucune donnée USB envoyée ou lue.");
+        }
+
+        Console.WriteLine($"Connexion ouverte après fermeture : {connection.IsOpen}");
+        Console.WriteLine("Connexion fermée proprement.");
         Console.WriteLine();
     }
 }
