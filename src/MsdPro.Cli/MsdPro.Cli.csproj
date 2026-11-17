@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MsdPro.Core\MsdPro.Core.csproj" />
+    <ProjectReference Include="..\MsdPro.Usb\MsdPro.Usb.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\MsdPro.Core\MsdPro.Core.csproj" />
+    <ProjectReference Include="..\..\src\MsdPro.Usb\MsdPro.Usb.csproj" />
   </ItemGroup>
 
 </Project>
